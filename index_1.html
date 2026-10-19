@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oman Road Trip</title>
+<meta name="description" content="Road trip itinerary from Dubai through Oman via the Mezyad crossing, Nov 8–15 2026.">
+<script id="baked-edits" type="application/json">{}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6EFE4; --paper:#FFFDF9; --ink:#2B2118; --muted:#7A6A58; --line:#E6DACA;
+  --accent:#C2562F; --teal:#1F6F78; --plum:#7B4F8E; --sea:#CFE4E3; --land:#EFE1C8; --dune:#E3C79A; --ridge:#D2B48C;
+  --shadow:0 1px 2px rgba(43,33,24,.06),0 8px 24px rgba(43,33,24,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#17130F; --paper:#211B16; --ink:#F3EADF; --muted:#B5A592; --line:#3A3027;
+    --accent:#E07A4F; --teal:#5FB3BA; --plum:#C39BD3; --sea:#14313A; --land:#2E261E; --dune:#4A3A27; --ridge:#4F4030;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#17130F; --paper:#211B16; --ink:#F3EADF; --muted:#B5A592; --line:#3A3027;
+  --accent:#E07A4F; --teal:#5FB3BA; --plum:#C39BD3; --sea:#14313A; --land:#2E261E; --dune:#4A3A27; --ridge:#4F4030;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;margin:0}
+a{color:var(--teal)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+section{padding:48px 0 8px}
+h2{font-size:clamp(1.6rem,3.5vw,2.2rem);margin-bottom:8px}
+.lead{color:var(--muted);max-width:680px;margin:0 0 24px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:18px;overflow-x:auto;padding-top:12px;padding-bottom:12px;white-space:nowrap;scrollbar-width:none}
+nav a{color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:500}
+nav a:hover{color:var(--ink)}
+
+/* hero */
+header{position:relative;overflow:hidden;background:linear-gradient(180deg,#F2C48D 0%,#E8955E 55%,#B9583A 100%);color:#2B1A10}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) header{background:linear-gradient(180deg,#2A2340 0%,#5A3550 55%,#8A4A3A 100%);color:#FBEFE4}}
+:root[data-theme="dark"] header{background:linear-gradient(180deg,#2A2340 0%,#5A3550 55%,#8A4A3A 100%);color:#FBEFE4}
+header .wrap{position:relative;z-index:2;padding-top:72px;padding-bottom:120px}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:600;opacity:.8}
+header h1{font-size:clamp(2.4rem,7vw,4.4rem);margin:10px 0 12px;max-width:760px}
+header p{max-width:600px;font-size:1.1rem;margin:0;opacity:.9}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.stat{background:rgba(255,255,255,.28);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:6px 14px;font-size:.9rem;font-weight:500}
+header svg.dunes{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:120px;z-index:1}
+
+/* cards */
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
+.card h3{font-size:1.1rem;margin-bottom:6px}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px;vertical-align:middle}
+
+/* map */
+.maprow{display:grid;gap:20px;grid-template-columns:1.6fr 1fr;align-items:start}
+@media (max-width:820px){.maprow{grid-template-columns:1fr}}
+.map{background:var(--sea);border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+.map svg{display:block;width:100%;height:auto}
+.map text{font:600 13px Inter,sans-serif;fill:var(--ink)}
+.map .small{font-weight:500;font-size:11.5px;fill:var(--muted)}
+.stops{list-style:none;margin:0;padding:0}
+.stops li{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.stops li:last-child{border-bottom:0}
+.num{flex:0 0 28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:600;font-size:.85rem}
+.num.alt{background:var(--teal)}
+.stops b{display:block}
+.stops div span{color:var(--muted);font-size:.88rem}
+
+/* filter */
+.filter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.filter button{font:500 .9rem Inter,sans-serif;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:8px 16px;cursor:pointer}
+.filter button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* days */
+.days{display:grid;gap:16px}
+.day{display:grid;grid-template-columns:96px 1fr;background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+@media (max-width:600px){.day{grid-template-columns:1fr}}
+.date{background:var(--land);padding:18px 12px;text-align:center}
+.date .dow{text-transform:uppercase;letter-spacing:.12em;font-size:.75rem;color:var(--muted);font-weight:600}
+.date .d{font-family:Fraunces,serif;font-size:2.2rem;font-weight:700;line-height:1.1}
+.date .m{font-size:.85rem;color:var(--muted)}
+@media (max-width:600px){.date{display:flex;gap:10px;align-items:baseline;text-align:left;padding:12px 18px}.date .d{font-size:1.5rem}}
+.body{padding:18px 20px}
+.body h3{font-size:1.25rem;margin-bottom:8px}
+.meta{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.85rem;color:var(--muted);margin-bottom:12px}
+.items{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.items li{display:flex;gap:10px;align-items:flex-start}
+.tag{flex:0 0 auto;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;border-radius:6px;padding:3px 8px;margin-top:2px;min-width:92px;text-align:center}
+.tag.together{background:color-mix(in srgb,var(--teal) 16%,transparent);color:var(--teal)}
+.tag.friends{background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent)}
+.tag.carol{background:color-mix(in srgb,var(--plum) 18%,transparent);color:var(--plum)}
+.items li.hide{display:none}
+.camp{display:inline-block;margin-top:12px;font-size:.82rem;font-weight:600;color:var(--accent)}
+
+/* tables */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--paper)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.93rem}
+th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.06em}
+tr:last-child td{border-bottom:0}
+
+/* checklists */
+.two{display:grid;gap:16px;grid-template-columns:1fr 1fr}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+.check{list-style:none;margin:0;padding:0}
+.check li{border-bottom:1px solid var(--line)}
+.check li:last-child{border-bottom:0}
+.check label{display:flex;gap:12px;padding:10px 0;cursor:pointer;align-items:flex-start}
+.check input{width:18px;height:18px;margin-top:3px;accent-color:var(--teal);flex:0 0 auto}
+.check input:checked + span{text-decoration:line-through;color:var(--muted)}
+.notes{margin:0;padding-left:18px}
+.notes li{margin-bottom:8px}
+.hint{font-size:.82rem;color:var(--muted);margin-top:10px}
+
+/* comments */
+.comments{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
+.setup{border:1px dashed var(--line);border-radius:12px;padding:16px;color:var(--muted);font-size:.93rem}
+footer{color:var(--muted);font-size:.85rem;padding:48px 0 40px;text-align:center}
+/* stays */
+.stays{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.stay-area{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:4px}
+.stay-opts{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:12px}
+.stay-opts li{border-top:1px solid var(--line);padding-top:12px}
+.stay-opts .name{font-weight:600;display:block}
+.stay-opts .why{color:var(--muted);font-size:.92rem;display:block}
+
+/* edit mode */
+.editbar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:20;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;background:var(--ink);color:var(--bg);padding:10px 14px;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.25);width:max-content;max-width:calc(100% - 32px);font-size:.88rem}
+.editbar button{font:600 .85rem Inter,sans-serif;border:0;border-radius:999px;padding:8px 14px;cursor:pointer;background:var(--bg);color:var(--ink)}
+.editbar button.primary{background:var(--accent);color:#fff}
+.editbar[hidden]{display:none}
+#editBtn{margin-left:auto;flex:0 0 auto;font:600 .85rem Inter,sans-serif;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer}
+body.editing [contenteditable="true"]{outline:1.5px dashed color-mix(in srgb,var(--accent) 60%,transparent);outline-offset:3px;border-radius:4px;cursor:text}
+body.editing [contenteditable="true"]:focus{outline-style:solid;background:color-mix(in srgb,var(--accent) 8%,transparent)}
+body.editing main{padding-bottom:90px}
+.theme{position:absolute;top:16px;right:16px;z-index:3;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.2);color:inherit;border-radius:999px;padding:6px 12px;font:500 .85rem Inter,sans-serif;cursor:pointer}
+</style>
+</head>
+<body>
+
+<header>
+  <button class="theme" id="themeBtn" type="button">Dark mode</button>
+  <div class="wrap">
+    <div class="eyebrow">Sun Nov 8 – Sun Nov 15, 2026</div>
+    <h1>Oman road trip from Dubai through the mountains, desert and coast</h1>
+    <p>A 7-night drive for four friends. Climbing, canyoning and camping for those who want it, and forts, souqs, viewpoints and easy swims for everyone.</p>
+    <div class="stats">
+      <span class="stat">7 nights</span>
+      <span class="stat">About 1,900 km</span>
+      <span class="stat">Border: Mezyad, both ways</span>
+      <span class="stat">4 travellers, 1 car</span>
+    </div>
+  </div>
+  <svg class="dunes" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 70 C 200 20, 380 20, 560 60 S 900 110, 1100 55 S 1340 30, 1440 50 V120 H0Z" fill="var(--bg)" opacity=".45"/>
+    <path d="M0 95 C 240 55, 420 60, 640 90 S 1000 120, 1220 80 S 1400 70, 1440 78 V120 H0Z" fill="var(--bg)"/>
+  </svg>
+</header>
+
+<nav aria-label="Sections">
+  <div class="wrap">
+    <a href="#plan">How the plan works</a>
+    <a href="#route">Route</a>
+    <a href="#stays">Where to stay</a>
+    <a href="#days">Day by day</a>
+    <a href="#guide">Guide and costs</a>
+    <a href="#border">Car and border</a>
+    <a href="#bookings">Bookings</a>
+    <a href="#comments">Comments</a>
+    <button type="button" id="editBtn">Edit page</button>
+  </div>
+</nav>
+
+<div class="editbar" id="editBar" hidden>
+  <span>Click any text to change it. Edits save in this browser.</span>
+  <button type="button" class="primary" id="dlBtn">Download edited page</button>
+  <button type="button" id="resetBtn">Undo all my edits</button>
+  <button type="button" id="doneBtn">Done</button>
+</div>
+
+<main class="wrap">
+
+<section id="plan">
+  <h2>How the plan works for all four of us</h2>
+  <p class="lead">The group always sleeps at the same place. On activity days the friends go out with the guide or on foot, and Carol has a short, flat option nearby.</p>
+  <div class="grid">
+    <div class="card"><h3><span class="dot" style="background:var(--teal)"></span>Shared every day</h3><p>The drive, meals, sunsets and every evening and overnight stop.</p></div>
+    <div class="card"><h3><span class="dot" style="background:var(--accent)"></span>Split on activity days</h3><p>Climbing, Snake Canyon, the Balcony Walk and Wadi Shab are for the friends. Carol has a nearby alternative each time.</p></div>
+    <div class="card"><h3><span class="dot" style="background:var(--plum)"></span>One night of camping together</h3><p>All four camp at the Wahiba Sands desert camp on Thu Nov 12. On Jebel Shams the friends camp and Carol takes a chalet on the same site.</p></div>
+    <div class="card"><h3><span class="dot" style="background:var(--ridge)"></span>Easy outdoor stops for everyone</h3><p>The Jebel Shams rim viewpoint, the Wadi Bani Khalid pools, Bimmah Sinkhole and turtle watching need only short, flat walks.</p></div>
+  </div>
+</section>
+
+<section id="route">
+  <h2>Route from Dubai into Oman through Mezyad</h2>
+  <p class="lead">The longest days are the first and the last, 6–7 hours each including the border. Map positions and drive times are approximate.</p>
+  <div class="maprow">
+    <div class="map">
+      <svg viewBox="0 0 800 540" role="img" aria-label="Approximate route map from Dubai through Mezyad to the Hajar mountains, Wahiba Sands, the east coast and Muscat">
+        <polygon points="0,160 20,155 80,57 125,20 130,0 235,0 237,20 239,80 252,140 297,192 380,252 470,290 545,302 582,312 620,357 672,417 710,458 755,465 764,488 745,540 0,540" fill="var(--land)"/>
+        <path d="M250 175 C 300 250, 350 330, 420 360 S 560 380, 640 395" fill="none" stroke="var(--ridge)" stroke-width="34" stroke-linecap="round" opacity=".55"/>
+        <ellipse cx="585" cy="485" rx="70" ry="38" fill="var(--dune)" opacity=".8"/>
+        <text x="585" y="530" text-anchor="middle" class="small">Wahiba Sands</text>
+        <text x="300" y="300" class="small" transform="rotate(32 300 300)">Hajar Mountains</text>
+        <text x="640" y="200" class="small">Gulf of Oman</text>
+        <text x="40" y="30" class="small">Arabian Gulf</text>
+        <!-- return route -->
+        <polyline points="546,306 414,405 263,360 147,237 75,65" fill="none" stroke="var(--teal)" stroke-width="3" stroke-dasharray="2 7" stroke-linecap="round" opacity=".9"/>
+        <!-- outbound route -->
+        <polyline points="75,65 147,237 263,360 378,396 374,359 390,366 414,405 575,470 648,453 758,482 669,419 546,306" fill="none" stroke="var(--accent)" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+        <!-- small stops -->
+        <g fill="var(--paper)" stroke="var(--ink)" stroke-width="2">
+          <circle cx="75" cy="65" r="7"/><circle cx="147" cy="237" r="6"/><circle cx="263" cy="360" r="4"/>
+          <circle cx="414" cy="405" r="5"/><circle cx="648" cy="453" r="5"/><circle cx="669" cy="419" r="5"/>
+        </g>
+        <text x="90" y="70">Dubai</text>
+        <text x="160" y="242">Mezyad crossing</text>
+        <text x="263" y="382" text-anchor="middle" class="small">Ibri</text>
+        <text x="428" y="420" class="small">Nizwa</text>
+        <text x="640" y="440" text-anchor="end" class="small">Wadi Bani Khalid</text>
+        <text x="682" y="410" class="small">Wadi Shab</text>
+        <!-- night pins -->
+        <g font-family="Inter" font-weight="600" font-size="11" text-anchor="middle">
+          <circle cx="378" cy="396" r="11" fill="var(--accent)"/><text x="378" y="400" fill="#fff">1</text>
+          <circle cx="374" cy="359" r="11" fill="var(--accent)"/><text x="374" y="363" fill="#fff">2</text>
+          <circle cx="398" cy="352" r="11" fill="var(--accent)"/><text x="398" y="356" fill="#fff">3</text>
+          <circle cx="575" cy="470" r="11" fill="var(--accent)"/><text x="575" y="474" fill="#fff">5</text>
+          <circle cx="758" cy="482" r="11" fill="var(--accent)"/><text x="758" y="486" fill="#fff">6</text>
+          <circle cx="546" cy="306" r="11" fill="var(--accent)"/><text x="546" y="310" fill="#fff">7</text>
+        </g>
+        <text x="364" y="410" text-anchor="end">Misfat</text>
+        <text x="360" y="352" text-anchor="end">Jebel Shams</text>
+        <text x="414" y="342">Balad Sayt</text>
+        <text x="546" y="288" text-anchor="middle">Muscat</text>
+        <text x="745" y="510" text-anchor="end">Ras al Jinz</text>
+      </svg>
+    </div>
+    <div class="card">
+      <ul class="stops">
+        <li><span class="num">1</span><div><b>Misfat al Abriyeen</b><span>Sun Nov 8 · heritage guesthouse</span></div></li>
+        <li><span class="num">2</span><div><b>Jebel Shams rim</b><span>Mon Nov 9 · tents for the friends, chalet for Carol</span></div></li>
+        <li><span class="num">3</span><div><b>Balad Sayt</b><span>Tue Nov 10 and Wed Nov 11 · guide's guesthouse</span></div></li>
+        <li><span class="num">5</span><div><b>Wahiba Sands</b><span>Thu Nov 12 · desert camp, all four in tents</span></div></li>
+        <li><span class="num">6</span><div><b>Ras al Jinz or Sur</b><span>Fri Nov 13 · turtle reserve</span></div></li>
+        <li><span class="num">7</span><div><b>Muscat</b><span>Sat Nov 14 · hotel</span></div></li>
+        <li><span class="num alt">↩</span><div><b>Back to Dubai</b><span>Sun Nov 15 · through Mezyad (dotted line)</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="stays">
+  <h2>Where to stay in each area</h2>
+  <p class="lead">Suggested places for each night, chosen so the friends can camp where they want and Carol has a room with a private bathroom. Prices change by date, so compare them on booking sites before reserving.</p>
+  <div class="stays" id="stayList"></div>
+  <p class="hint">Sources: <a href="https://www.wildfrontierstravel.com/en_CA/destination/oman/hotels/jebel-shams-resort-jebel-shams/8615" target="_blank" rel="noopener">Wild Frontiers (Jebel Shams Resort)</a> · <a href="https://www.omanobserver.om/article/1164571/features/travel/four-camps-to-consider-if-youre-going-for-winter-stay-at-wahiba-sands" target="_blank" rel="noopener">Oman Observer (Wahiba camps)</a> · <a href="https://www.corinthiantravel.co.uk/hotels/carapace-lodge-ras-al-jinz-oman/" target="_blank" rel="noopener">Corinthian Travel (Carapace Lodge)</a> · <a href="https://hotelierschoice.com/fr/guide/muscat/mutrah/" target="_blank" rel="noopener">Hotelier's Choice (Mutrah hotels)</a></p>
+</section>
+
+<section id="days">
+  <h2>Day-by-day plan, Nov 8–15</h2>
+  <p class="lead">Use the buttons to see one person's version of the trip. Shared plans always stay visible.</p>
+  <div class="filter" role="group" aria-label="Show plans for">
+    <button type="button" data-f="all" aria-pressed="true">Everyone</button>
+    <button type="button" data-f="friends" aria-pressed="false">The friends' plan</button>
+    <button type="button" data-f="carol" aria-pressed="false">Carol's plan</button>
+  </div>
+  <div class="days" id="dayList"></div>
+</section>
+
+<section id="guide">
+  <h2>Guide bookings and costs</h2>
+  <p class="lead">The plan uses the guide for climbing on Nov 10 and Snake Canyon on Nov 11. The Balcony Walk is a marked trail the friends can do without a guide. The guide supplies harnesses, shoes, ropes and a 4x4.</p>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Option</th><th>What it includes</th><th>Price</th></tr></thead>
+      <tbody>
+        <tr><td>Activities only, 3 friends</td><td>Climbing 25 OMR + canyoning 40 OMR per person, less 15% group discount</td><td>About 166 OMR (about 430 USD), calculated from the per-person prices</td></tr>
+        <tr><td>Guide's 3-day package, 3 people</td><td>2 nights at the mountain guesthouse, all meals, 4x4 transport, guides, equipment, 3 activity days</td><td>425 OMR (about 1,100 USD), quoted</td></tr>
+        <tr><td>Guide's quote for 4 people</td><td>3 activities per person with 15% discount</td><td>306 OMR (795 USD), quoted</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card" style="margin-top:16px">
+    <h3>Questions to send the guide</h3>
+    <ul class="check" data-list="guide"></ul>
+  </div>
+</section>
+
+<section id="border">
+  <h2>Car and the Mezyad border crossing</h2>
+  <p class="lead">Rent a high-clearance 4WD in Dubai for the whole week, with the rental company's written permission to drive it into Oman. The roads to Jebel Shams and Balad Sayt have steep, unpaved sections.</p>
+  <div class="two">
+    <div class="card">
+      <h3>At the border</h3>
+      <ul class="notes">
+        <li>UAE exit fee: AED 35 per person.</li>
+        <li>Insurance: confirm the rental includes Oman cover. If not, buy an Orange Card at the border, about AED 106 for at least 5 days (third-party only).</li>
+        <li>Documents: passports valid 6+ months, driving licences, car registration card and the rental company's permission letter.</li>
+        <li>Visas: check Oman's entry rules for each passport before the trip.</li>
+        <li>Confirm Mezyad opening hours for Nov 8 and Nov 15.</li>
+      </ul>
+      <p class="hint">Source: <a href="https://gulfnews.com/amp/story/living-in-uae%2Fvisa-immigration%2Feid-al-fitr-holidays-2026-want-to-go-from-uae-to-oman-via-road-visa-car-insurance-and-border-rules-explained-1.1689777328887" target="_blank" rel="noopener">Gulf News, UAE to Oman by road</a></p>
+    </div>
+    <div class="card">
+      <h3>Weather and packing</h3>
+      <ul class="notes">
+        <li>About 25–30°C on the coast and in the desert in mid-November.</li>
+        <li>About 10°C at night on Jebel Shams: bring a warm layer.</li>
+        <li>Water shoes and dry bags for the wadis.</li>
+        <li>Swimwear that covers shoulders and knees for public wadis.</li>
+        <li>Grand Mosque for women: headscarf, long sleeves, ankle-length clothing.</li>
+        <li>Fri and Sat are the local weekend, so arrive early at the wadis.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="bookings">
+  <h2>Bookings to make before Nov 8</h2>
+  <p class="lead">Tick items as they are booked.</p>
+  <div class="card">
+    <ul class="check" data-list="bookings"></ul>
+    <p class="hint">Ticks are saved in your own browser only. Post in the comments when you book something so everyone knows.</p>
+  </div>
+</section>
+
+<section id="comments">
+  <h2>Comments and suggestions</h2>
+  <p class="lead">Leave ideas, questions or changes here. Commenting needs a free GitHub account.</p>
+  <div class="comments"><div id="giscus"></div></div>
+</section>
+
+</main>
+
+<footer>Plan last updated Oct 19, 2026. Drive times and opening hours are approximate; confirm before travelling.</footer>
+
+<script>
+/* Copy of the page before any changes, used for "Download edited page" */
+const ORIGINAL = "<!doctype html>\n" + document.documentElement.outerHTML;
+
+/* ===== Comments setup (giscus) =====
+   1. Make this repository public and turn on Discussions (Settings > General > Features).
+   2. Install the giscus app: https://github.com/apps/giscus
+   3. Go to https://giscus.app, enter the repository, choose the "General" category,
+      and copy the values for data-repo-id and data-category-id into the fields below. */
+const GISCUS = {
+  repo: "YOUR-GITHUB-USERNAME/oman-trip",
+  repoId: "PASTE_REPO_ID",
+  category: "General",
+  categoryId: "PASTE_CATEGORY_ID"
+};
+
+const DAYS = [
+  {dow:"Sun",d:8,title:"Dubai to Misfat al Abriyeen through Mezyad",drive:"6–7 h including the border",night:"Heritage guesthouse, Misfat al Abriyeen",items:[
+    ["together","Leave Dubai by 7:00. Drive 1.5 h to the Mezyad crossing near Al Ain and allow about 1 h for UAE exit and Oman entry."],
+    ["together","Drive about 1.5 h to Ibri and 1.5 h on to Al Hamra."],
+    ["together","Evening walk through the lanes, falaj channels and date gardens of Misfat al Abriyeen. The walk is short and mostly flat."]]},
+  {dow:"Mon",d:9,title:"Jebel Shams canyon rim",drive:"About 1 h",night:"Jebel Shams: tents for the friends, chalet for Carol on the same site",items:[
+    ["together","Drive up to Jebel Shams. A high-clearance 4WD is recommended for the final unpaved section."],
+    ["friends","Balcony Walk (W6), about 3 h return along the canyon edge."],
+    ["carol","Canyon rim viewpoint next to the parking area, then the café at the resort."],
+    ["together","Sunset at the rim and dinner. Nights drop to about 10°C."]]},
+  {dow:"Tue",d:10,title:"Balad Sayt and rock climbing",drive:"About 2 h over the mountain pass",night:"Guide's guesthouse, Balad Sayt",items:[
+    ["together","Drive over the mountain pass to Balad Sayt and meet the guide."],
+    ["friends","Afternoon climbing with the guide at La Gorgette."],
+    ["carol","Short walk around the village and its terraces, or rest at the guesthouse."],
+    ["together","Dinner at the guesthouse."]]},
+  {dow:"Wed",d:11,title:"Canyoning in Snake Canyon",drive:"None for the group",night:"Guide's guesthouse, Balad Sayt",items:[
+    ["friends","Full day canyoning at Snake Canyon with the guide: rope descents, swimming and jumps."],
+    ["carol","Quiet day at the guesthouse and village, or ride along in the guide's 4x4 and wait at the canyon exit pools in Wadi Bani Awf."],
+    ["together","Dinner at the guesthouse."]]},
+  {dow:"Thu",d:12,title:"Nizwa, then a night in Wahiba Sands",drive:"About 4.5 h",night:"Wahiba Sands desert camp, all four in tents",camp:true,items:[
+    ["together","Drive to Nizwa, about 2 h. Visit Nizwa Fort and the souq, and have lunch."],
+    ["together","Drive about 2.5 h to Al Wasil or Bidiyah. The camp's 4x4 collects you there; do not drive the rental into the dunes."],
+    ["together","Sunset on the dunes, dinner and stargazing. All four sleep in tents."],
+    ["carol","Carol's one camping night. Choose a camp whose tents have beds and an en-suite bathroom."]]},
+  {dow:"Fri",d:13,title:"Wadi Bani Khalid and turtle watching",drive:"About 3 h",night:"Ras al Jinz Turtle Reserve or Sur",items:[
+    ["together","Early dune drive or camel ride if wanted."],
+    ["together","Wadi Bani Khalid. Arrive before 10:00, since Friday is the local weekend."],
+    ["carol","The main pools are about 10 minutes' walk from the car park, with shade and a café."],
+    ["friends","Continue up the wadi to the Moqal cave."],
+    ["together","Evening guided turtle-watching tour at Ras al Jinz. The walk is short and flat; sightings are likely but not guaranteed."]]},
+  {dow:"Sat",d:14,title:"Wadi Shab, then Muscat",drive:"About 3.5 h",night:"Hotel in Muscat",items:[
+    ["friends","Wadi Shab, about 3–4 h including the swim to the cave. Bring water shoes and a dry bag."],
+    ["carol","Boat across the wadi mouth, then the first pools or the café area near the entrance."],
+    ["together","Stop at Bimmah Sinkhole on the coast road (stairs down, short)."],
+    ["together","Mutrah Corniche, Mutrah Souq and dinner by the harbour."]]},
+  {dow:"Sun",d:15,title:"Muscat back to Dubai through Mezyad",drive:"6–7 h including the border",night:"Home",items:[
+    ["together","Sultan Qaboos Grand Mosque at 8:00 (visitor hours 8:00–11:00, closed Fridays). Leave Muscat by 9:30."],
+    ["together","Drive via Nizwa and Ibri to Mezyad and on to Dubai, arriving around 16:30. With an evening flight, skip the mosque and leave by 8:00."]]}
+];
+const LABEL = {together:"Together",friends:"Friends",carol:"Carol"};
+
+const esc = s => s.replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+document.getElementById("dayList").innerHTML = DAYS.map(day => `
+  <article class="day">
+    <div class="date"><div class="dow">${day.dow}</div><div class="d">${day.d}</div><div class="m">Nov</div></div>
+    <div class="body">
+      <h3>${esc(day.title)}</h3>
+      <div class="meta"><span>Drive: ${esc(day.drive)}</span><span>Night: ${esc(day.night)}</span></div>
+      <ul class="items">${day.items.map(([w,t]) => `<li data-who="${w}"><span class="tag ${w}">${LABEL[w]}</span><span>${esc(t)}</span></li>`).join("")}</ul>
+      ${day.camp ? '<span class="camp">The one night all four camp together</span>' : ""}
+    </div>
+  </article>`).join("");
+
+document.querySelectorAll(".filter button").forEach(btn => btn.addEventListener("click", () => {
+  const f = btn.dataset.f;
+  document.querySelectorAll(".filter button").forEach(b => b.setAttribute("aria-pressed", String(b === btn)));
+  document.querySelectorAll(".items li").forEach(li => {
+    const w = li.dataset.who;
+    li.classList.toggle("hide", !(f === "all" || w === "together" || w === f));
+  });
+}));
+
+/* Checklists, saved per browser */
+const LISTS = {
+  guide: [
+    "Can the package be shortened to 2 activity days (climbing Nov 10, canyoning Nov 11) with 2 guesthouse nights, and what is the price?",
+    "What does Carol pay as a non-participating guest for a room, meals and rides in the 4x4?",
+    "Does the 15% group discount still apply to 3 participants?",
+    "Where do we meet on Nov 10, and can our rental car handle the road over the pass to Balad Sayt?"
+  ],
+  bookings: [
+    "4WD rental from Dubai, Nov 8–15, with Oman permission letter and insurance",
+    "Misfat al Abriyeen guesthouse for Nov 8",
+    "Jebel Shams for Nov 9: tent pitches for 3 and a chalet for Carol on the same site",
+    "Guide confirmation for Nov 10–11",
+    "Wahiba Sands camp for Nov 12 with 4x4 pickup: tents for 4, with beds and en-suite bathrooms",
+    "Ras al Jinz Turtle Reserve turtle tour and room for Nov 13",
+    "Muscat hotel for Nov 14",
+    "Check flight times out of Dubai against the Nov 15 drive"
+  ]
+};
+const load = k => { try { return JSON.parse(localStorage.getItem(k)) || {}; } catch (e) { return {}; } };
+const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} };
+document.querySelectorAll(".check[data-list]").forEach(ul => {
+  const key = "oman-" + ul.dataset.list, state = load(key);
+  ul.innerHTML = LISTS[ul.dataset.list].map((t, i) =>
+    `<li><label><input type="checkbox" data-i="${i}" ${state[i] ? "checked" : ""}><span>${esc(t)}</span></label></li>`).join("");
+  ul.addEventListener("change", e => { state[e.target.dataset.i] = e.target.checked; save(key, state); });
+});
+
+/* Where to stay */
+const STAYS = [
+  {area:"Misfat al Abriyeen", night:"Sun Nov 8", opts:[
+    ["Misfah Old House","https://m.booking.com/hotel/om/misfah-old-house.en-gb.html","Restored mud-brick house inside the old village. Ask whether rooms have private bathrooms when booking."]]},
+  {area:"Jebel Shams", night:"Mon Nov 9", opts:[
+    ["Jebel Shams Resort","https://www.wildfrontierstravel.com/en_CA/destination/oman/hotels/jebel-shams-resort-jebel-shams/8615","Chalets with en-suite bathrooms and tents on the same site, a short walk from the canyon edge. Friends in tents, Carol in a chalet."],
+    ["Sama Heights Resort","https://booking.com/hotel/om/jabal-shems-heights.html","Alternative on the same plateau. Ask whether it offers tents or camping for the friends."]]},
+  {area:"Balad Sayt", night:"Tue Nov 10 and Wed Nov 11", opts:[
+    ["Guide's mountain guesthouse","","Included in the guide's package with all meals. Ask the guide what Carol pays as a non-participating guest."]]},
+  {area:"Wahiba Sands", night:"Thu Nov 12 · all four camp", opts:[
+    ["Sunrise Desert Camp","","Five tents, each with a private bathroom. Small and quiet, reached by a drive through the dunes."],
+    ["Thousand Nights Camp","https://www.roomertravel.com/featured/thousand-nights-camp.h937354","Larger, upmarket camp with air-conditioned tents and bungalows and open-sky showers."],
+    ["Sama Al Wasil Desert Camp","","Chalets and Sultan tents with patios. Breakfast and dinner included."]]},
+  {area:"Ras al Jinz", night:"Fri Nov 13", opts:[
+    ["Carapace Lodge, Ras al Jinz Turtle Reserve","https://www.corinthiantravel.co.uk/hotels/carapace-lodge-ras-al-jinz-oman/","19 rooms with en-suite bathrooms and 12 air-conditioned eco tents, about 10 minutes' walk from the turtle beach. Book the turtle tour with the stay."]]},
+  {area:"Muscat", night:"Sat Nov 14", opts:[
+    ["Mutrah Gate Hotel","","In Mutrah, walking distance to the corniche and souq. Rated 8.7 on Booking.com."],
+    ["Naseem Hotel","","Simpler, lower-priced hotel in Mutrah, close to the corniche."]]}
+];
+document.getElementById("stayList").innerHTML = STAYS.map(s => `
+  <div class="card stay">
+    <div class="stay-area">${esc(s.night)}</div>
+    <h3>${esc(s.area)}</h3>
+    <ul class="stay-opts">${s.opts.map(([n,u,w]) => `<li><span class="name">${u ? `<a href="${u}" target="_blank" rel="noopener">${esc(n)}</a>` : esc(n)}</span><span class="why">${esc(w)}</span></li>`).join("")}</ul>
+  </div>`).join("");
+
+/* Editable text: edits save in this browser; "Download edited page" bakes them into a new index.html */
+const EDIT_VERSION = "v2";
+const EDITABLE = "header h1, header p, .stat, main h2, main .lead, .card h3, .card > p, .stay-area, .stay-opts .name, .stay-opts .why, th, td, .notes li, .stops b, .stops div span, .day h3, .meta span, .items li > span:last-child, .check label span, footer";
+const editEls = () => [...document.querySelectorAll(EDITABLE)];
+const EDIT_KEY = "oman-edits-" + EDIT_VERSION;
+let baked = {}; try { baked = JSON.parse(document.getElementById("baked-edits").textContent) || {}; } catch (e) {}
+const edits = Object.assign({}, baked, load(EDIT_KEY));
+editEls().forEach((el, i) => { if (edits[i] != null) el.innerHTML = edits[i]; });
+
+const editBar = document.getElementById("editBar");
+function setEditing(on) {
+  document.body.classList.toggle("editing", on);
+  editBar.hidden = !on;
+  document.getElementById("editBtn").textContent = on ? "Editing…" : "Edit page";
+  editEls().forEach(el => on ? el.setAttribute("contenteditable", "true") : el.removeAttribute("contenteditable"));
+}
+document.getElementById("editBtn").addEventListener("click", () => setEditing(!document.body.classList.contains("editing")));
+document.getElementById("doneBtn").addEventListener("click", () => setEditing(false));
+document.addEventListener("input", e => {
+  const el = e.target.closest && e.target.closest('[contenteditable="true"]');
+  if (!el) return;
+  const i = editEls().indexOf(el);
+  if (i > -1) { edits[i] = el.innerHTML; const mine = load(EDIT_KEY); mine[i] = el.innerHTML; save(EDIT_KEY, mine); }
+});
+document.addEventListener("click", e => {
+  if (!document.body.classList.contains("editing")) return;
+  if (e.target.closest('[contenteditable="true"]') && (e.target.closest("label") || e.target.closest("a"))) e.preventDefault();
+}, true);
+document.getElementById("resetBtn").addEventListener("click", () => {
+  try { localStorage.removeItem(EDIT_KEY); } catch (e) {}
+  location.reload();
+});
+document.getElementById("dlBtn").addEventListener("click", () => {
+  const json = JSON.stringify(edits).replace(/</g, "\\u003c");
+  const html = ORIGINAL.replace(/(<script id="baked-edits" type="application\/json">)[\s\S]*?(<\/script>)/, (m, a, b) => a + json + b);
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([html], {type: "text/html"}));
+  a.download = "index.html"; a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+});
+
+/* Theme toggle */
+const root = document.documentElement, btn = document.getElementById("themeBtn");
+const isDark = () => root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+const label = () => { btn.textContent = isDark() ? "Light mode" : "Dark mode"; };
+try { const t = localStorage.getItem("oman-theme"); if (t) root.dataset.theme = t; } catch (e) {}
+label();
+btn.addEventListener("click", () => {
+  root.dataset.theme = isDark() ? "light" : "dark"; label();
+  try { localStorage.setItem("oman-theme", root.dataset.theme); } catch (e) {}
+  const frame = document.querySelector("iframe.giscus-frame");
+  if (frame) frame.contentWindow.postMessage({giscus:{setConfig:{theme:isDark() ? "dark" : "light"}}}, "https://giscus.app");
+});
+
+/* Load comments */
+const box = document.getElementById("giscus");
+if (GISCUS.repoId.startsWith("PASTE")) {
+  box.innerHTML = '<div class="setup">Comments will appear here once the page is published on GitHub Pages and the giscus settings at the top of the script are filled in.</div>';
+} else {
+  const s = document.createElement("script");
+  s.src = "https://giscus.app/client.js";
+  Object.entries({
+    "data-repo": GISCUS.repo, "data-repo-id": GISCUS.repoId,
+    "data-category": GISCUS.category, "data-category-id": GISCUS.categoryId,
+    "data-mapping": "pathname", "data-strict": "0", "data-reactions-enabled": "1",
+    "data-emit-metadata": "0", "data-input-position": "top",
+    "data-theme": isDark() ? "dark" : "light", "data-lang": "en", "data-loading": "lazy"
+  }).forEach(([k, v]) => s.setAttribute(k, v));
+  s.crossOrigin = "anonymous"; s.async = true;
+  box.appendChild(s);
+}
+</script>
+</body>
+</html>
